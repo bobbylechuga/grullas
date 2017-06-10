@@ -1,4 +1,16 @@
 jQuery(document).ready(function($){
+
+	mitadVEntana();
+
+	function mitadVEntana() {
+		var windowSize = $(window).width();
+
+		if (windowSize >= 1024) {
+			$(".cd-projects-previews li").first().css("width", "50%");
+		}else if (windowSize < 1024) {
+			$(".cd-projects-previews li").first().css("height", "50%");
+		}
+	}
 	//cache DOM elements
 	var projectsContainer = $('.cd-projects-container'),
 		projectsPreviewWrapper = projectsContainer.find('.cd-projects-previews'),
@@ -11,7 +23,7 @@ jQuery(document).ready(function($){
 
 	var animating = false,
 		//will be used to extract random numbers for projects slide up/slide down effect
-		numRandoms = projects.find('li').length, 
+		numRandoms = projects.find('li').length,
 		uniqueRandoms = [];
 
 	//open project
@@ -26,7 +38,7 @@ jQuery(document).ready(function($){
 
 	navigationTrigger.on('click', function(event){
 		event.preventDefault();
-		
+
 		if( animating == false ) {
 			animating = true;
 			if( navigationTrigger.hasClass('project-open') ) {
@@ -46,14 +58,14 @@ jQuery(document).ready(function($){
 				if(transitionsNotSupported) projectPreviews.addClass('slide-out');
 				else slideToggleProjects(projectsPreviewWrapper.children('li'), -1, 0, true);
 			}
-		}	
+		}
 
 		if(transitionsNotSupported) animating = false;
 	});
 
 	//scroll down to project info
 	projectsContainer.on('click', '.scroll', function(){
-		projectsContainer.animate({'scrollTop':$(window).height()}, 500); 
+		projectsContainer.animate({'scrollTop':$(window).height()}, 500);
 	});
 
 	//check if background-images have been loaded and show project previews
@@ -75,12 +87,12 @@ jQuery(document).ready(function($){
 	function openProject(projectPreview) {
 		var projectIndex = projectPreview.index();
 		projects.children('li').eq(projectIndex).add(projectPreview).addClass('selected');
-		
+
 		if( transitionsNotSupported ) {
 			projectPreviews.addClass('slide-out').removeClass('selected');
 			projects.children('li').eq(projectIndex).addClass('content-visible');
 			animating = false;
-		} else { 
+		} else {
 			slideToggleProjects(projectPreviews, projectIndex, 0, true);
 		}
 	}
@@ -105,7 +117,7 @@ jQuery(document).ready(function($){
 
 		var randomProjectIndex = makeUniqueRandom();
 		if( randomProjectIndex == projectIndex ) randomProjectIndex = makeUniqueRandom();
-		
+
 		if( index < numRandoms - 1 ) {
 			projectsPreviewWrapper.eq(randomProjectIndex).toggleClass('slide-out', bool);
 			setTimeout( function(){
@@ -113,7 +125,7 @@ jQuery(document).ready(function($){
 				slideToggleProjects(projectsPreviewWrapper, projectIndex, index + 1, bool);
 			}, 150);
 		} else if ( index == numRandoms - 1 ) {
-			//this is the last project preview to be animated 
+			//this is the last project preview to be animated
 			projectsPreviewWrapper.eq(randomProjectIndex).toggleClass('slide-out', bool).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 				if( projectIndex != -1) {
 					projects.children('li.selected').addClass('content-visible');

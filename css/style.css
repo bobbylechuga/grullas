@@ -1,4 +1,4 @@
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -23,7 +23,7 @@ a {
   text-decoration: none;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Patterns - reusable parts of our design
 
@@ -36,7 +36,7 @@ Patterns - reusable parts of our design
   white-space: nowrap;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Menu trigger
 
@@ -183,7 +183,7 @@ Menu trigger
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Projects
 
@@ -368,8 +368,7 @@ Projects
 .cd-projects-previews a,
 .cd-projects .preview-image {
   /* set a background image for each project */
-  background: #5b927d url(../img/img-1.jpg) no-repeat center center;
-  background-size: cover;
+  background: #5b927d url(../img/img-1.jpg);
 }
 
 .cd-projects-previews li:nth-of-type(2) a,
@@ -577,7 +576,7 @@ li.selected .cd-project-title,
 .cd-project-info p {
   width: 90%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 15px auto;
   line-height: 2;
 }
 
@@ -678,7 +677,7 @@ li.selected .cd-project-title,
     transform: translateX(-50%) scale(1);
   }
 }
-/* -------------------------------- 
+/* --------------------------------
 
  Navigation
 
@@ -761,7 +760,7 @@ li.selected .cd-project-title,
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 JavaScript Disabled
 
@@ -783,4 +782,10 @@ JavaScript Disabled
 }
 .no-js .cd-primary-nav li:not(.cd-label) {
   display: inline-block;
+}
+
+/* ---------------- Pino y Chj ---------------- */
+
+strong {
+    font-weight: 900;
 }
