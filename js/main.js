@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 
-	mitadVEntana();
+	//mitadVEntana();
 
 	function mitadVEntana() {
 		var windowSize = $(window).width();
