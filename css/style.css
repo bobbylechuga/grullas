@@ -1,3 +1,4 @@
+/*
 @font-face {
 	font-family: 'OptimusPrincepsSemiBold';
 	src: url('../fonts/OptimusPrincepsSemiBold.eot');
@@ -17,6 +18,7 @@
 	font-weight: 500;
 	font-style: normal;
 }
+*/
 
 /* --------------------------------
 
@@ -33,7 +35,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: 'OptimusPrinceps';
+  font-family: "PT Sans", sans-serif;
   color: #ffffff;
   background-color: #262423;
 }
@@ -481,7 +483,7 @@ Projects
 }
 .cd-project-title p {
   font-size: 1.4rem;
-font-family: 'OptimusPrinceps';
+  font-family: "Merriweather", serif;
   font-style: italic;
   line-height: 1.2;
   padding: .4em 2em;
@@ -758,7 +760,7 @@ li.selected .cd-project-title {
   -moz-transition: background 0.2s;
   transition: background 0.2s;
   color: #ffffff;
-font-family: 'OptimusPrinceps';
+  font-family: "Merriweather", serif;
   font-size: 2.4rem;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
@@ -869,7 +871,7 @@ strong {
 .lang-menu li a {
   background-color: #ccc;
   color: #fff;
-  padding: 3px 9px; 
+  padding: 3px 9px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
   font-family: sans-serif;
